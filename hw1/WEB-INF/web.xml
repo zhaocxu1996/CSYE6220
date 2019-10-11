@@ -1,0 +1,60 @@
+<web-app>
+	<servlet>
+		<servlet-name>part2</servlet-name>
+		<servlet-class>part2</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>part2</servlet-name>
+		<url-pattern>/part2</url-pattern>
+	</servlet-mapping>
+
+
+	<servlet>
+		<servlet-name>part3</servlet-name>
+		<servlet-class>part3</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>part3</servlet-name>
+		<url-pattern>/part3</url-pattern>
+	</servlet-mapping>
+
+	<servlet>
+		<servlet-name>part4</servlet-name>
+		<servlet-class>part4</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>part4</servlet-name>
+		<url-pattern>/part4</url-pattern>
+	</servlet-mapping>
+
+	<servlet>
+		<servlet-name>part5</servlet-name>
+		<servlet-class>part5</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>part5</servlet-name>
+		<url-pattern>/part5</url-pattern>
+	</servlet-mapping>
+
+	<servlet>
+		<servlet-name>part6</servlet-name>
+		<servlet-class>part6</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>part6</servlet-name>
+		<url-pattern>/part6</url-pattern>
+	</servlet-mapping>
+
+	<servlet>
+		<servlet-name>part7</servlet-name>
+		<servlet-class>part7</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>part7</servlet-name>
+		<url-pattern>/part7</url-pattern>
+	</servlet-mapping>
+
+	<welcome-file-list>
+		<welcome-file>welcome.html</welcome-file>
+	</welcome-file-list>
+</web-app>
