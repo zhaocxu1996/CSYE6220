@@ -19,6 +19,7 @@ public class Login extends HttpServlet {
             request.login(username, password);
 
             System.out.println(request.isUserInRole("user"));
+
             System.out.println(request.getRemoteUser());
             
             Principal userPrincipal = request.getUserPrincipal();
