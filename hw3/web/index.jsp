@@ -8,9 +8,10 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
   <head>
-    <title>$Title$</title>
+    <title>hw3</title>
   </head>
   <body>
-  $END$
+  <a href="part5.html">Part 5</a>
+  <a href="part7.html">Part 6</a>
   </body>
 </html>

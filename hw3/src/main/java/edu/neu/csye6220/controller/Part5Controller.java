@@ -12,13 +12,18 @@ import java.sql.DriverManager;
 import java.sql.ResultSet;
 import java.sql.Statement;
 import java.sql.SQLException;
+import java.sql.ResultSetMetaData;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 
 
 /**
  * @author zhaocxu
  */
-@WebServlet(name = "FileController", urlPatterns = {"/FileController"})
-public class FileController extends HttpServlet {
+@WebServlet(name = "Part5Controller", urlPatterns = {"/part5.xls"})
+public class Part5Controller extends HttpServlet {
 
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
@@ -28,23 +33,34 @@ public class FileController extends HttpServlet {
         } catch (ClassNotFoundException e) {
             e.printStackTrace();
         }
-        //todo change url
-//        String url = "jdbc:relique:csv:" + "separator=;" + "&" + "fileExtension=.csv";
-        String url = "jdbc:relique:csv:" + Thread.currentThread().getContextClassLoader().getResource("").getPath()+"../csvs";
+        String url = "jdbc:relique:csv:C:\\Users\\zhaoc\\Documents\\GitHub\\CSYE6220\\hw3\\web\\WEB-INF";
         try {
             Connection conn = DriverManager.getConnection(url);
             Statement stmt = conn.createStatement();
             String query = "SELECT *  FROM " + filename;
-            //todo change query
-//            ResultSet results = stmt.executeQuery("SELECT NAME FROM part5.csv");
             ResultSet results = stmt.executeQuery(query);
-            String name = results.getString("name");
-            String password = results.getString("password");
-            String email = results.getString("email");
-            request.setAttribute("name", name);
-            request.setAttribute("password", password);
-            request.setAttribute("email", email);
-            RequestDispatcher dispatcher = request.getRequestDispatcher("part5.jsp");
+            ResultSetMetaData meta = results.getMetaData();
+
+            List<List<String>> resultList = new ArrayList();
+            ArrayList<String> titles = new ArrayList<String>();
+            int columnCount = meta.getColumnCount();
+
+            for(int m = 1; m <= columnCount; m ++){
+                titles.add(meta.getColumnName(m));
+            }
+            resultList.add(titles);
+            while (results.next())
+            {
+                ArrayList<String> rowList = new ArrayList<String>();
+                for (int i = 1; i <= columnCount; i++)
+                {
+                    rowList.add(results.getString(i));
+                }
+                resultList.add(rowList);
+            }
+
+            request.setAttribute("list", resultList);
+            RequestDispatcher dispatcher = request.getRequestDispatcher("WEB-INF/view/part5.jsp");
             dispatcher.forward(request, response);
             conn.close();
         } catch (SQLException e) {
