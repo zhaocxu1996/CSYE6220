@@ -12,6 +12,10 @@
   </head>
   <body>
   <a href="part5.html">Part 5</a>
-  <a href="part7.html">Part 6</a>
+  <a href="part6.html">Part 6</a>
+  <a href="login.html">Part 7</a>
+  <a href="part8.html">Part 8</a>
+  <a href="part9.html">Part 9</a>
+  <a href="part10.html">Part 10</a>
   </body>
 </html>
