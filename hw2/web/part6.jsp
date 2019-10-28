@@ -95,7 +95,6 @@ ${fn:substring(string, 5, 17)}<br>
 
   <table border="2" width="100%">
     <tr>
-      <th>ID</th>
       <th>username</th>
       <th>password</th>
     </tr>
