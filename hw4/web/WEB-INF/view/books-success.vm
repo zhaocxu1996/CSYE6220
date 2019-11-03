@@ -1,0 +1,9 @@
+<html>
+<head>
+    <title>Part 10 - Add books successfully</title>
+</head>
+<body>
+<p>${quantity} books added successfully</p>
+<a href="/hw4/part10.html">Click Here to Go Back to Homepage</a>
+</body>
+</html>

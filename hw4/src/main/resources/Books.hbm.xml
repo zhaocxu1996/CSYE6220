@@ -1,0 +1,21 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+
+    <class name="edu.neu.csye6220.entity.Books" table="books" schema="test">
+        <id name="isbn">
+            <column name="isbn" sql-type="varchar(12)" length="12"/>
+        </id>
+        <property name="title">
+            <column name="title" sql-type="varchar(60)" length="60" not-null="true"/>
+        </property>
+        <property name="authors">
+            <column name="authors" sql-type="varchar(60)" length="60" not-null="true"/>
+        </property>
+        <property name="price">
+            <column name="price" sql-type="float(10,2)" precision="10" scale="2" not-null="true"/>
+        </property>
+    </class>
+</hibernate-mapping>
