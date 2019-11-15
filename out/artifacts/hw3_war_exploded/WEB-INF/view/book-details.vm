@@ -1,0 +1,36 @@
+<html>
+<head>
+    <title>Part 10 - Enter Book Details</title>
+</head>
+<body>
+<form action="/hw3/part10" method="post">
+    <table>
+        <tr>
+            <th>ISBN</th>
+            <th>Book Title</th>
+            <th>Authors</th>
+            <th>Price</th>
+        </tr>
+        #foreach($i in [1..$quantity])
+            <tr>
+                <td>
+                    <input type="text" name="isbn$i">
+                </td>
+                <td>
+                    <input type="text" name="title$i">
+                </td>
+                <td>
+                    <input type="text" name="authors$i">
+                </td>
+                <td>
+                    <input type="text" name="price$i">
+                </td>
+            </tr>
+        #end
+##        <c:forEach var="i" begin="1" end="${quantity}">
+##        </c:forEach>
+    </table>
+    <input type="submit" name="add" value="Add Books">
+</form>
+</body>
+</html>
